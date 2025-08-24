@@ -1,0 +1,168 @@
+<!-- filepath: C:/Users/ARIES/Desktop/New folder (6)/Compgram Dash/Dashboard/admin/manage.html -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users - Compgram Admin Dashboard</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io (1)/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io (1)/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io (1)/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="bg-gray-100 min-h-screen font-sans dark:bg-gray-900 dark:text-white">
+
+    <!-- Header -->
+    <header class="flex justify-between items-center bg-white shadow p-4 dark:bg-gray-800">
+        <div class="flex items-center">
+            <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">Compgram Admin</div>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <div class="relative flex items-center space-x-2">
+                <div class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></div>
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png" class="w-6 h-6" alt="">
+                <a href="#" class="text-gray-700 hover:underline text-sm dark:text-gray-300">
+                    <h4>Admin</h4>
+                </a>
+                <div>
+                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png" class="w-8 h-8 rounded-full" alt="dp">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar + Main -->
+    <div class="flex">
+
+        <!-- Sidebar -->
+        <nav id="sidebar" class="w-64 bg-white shadow-lg min-h-screen p-6 dark:bg-gray-800 md:block">
+            <div class="space-y-6">
+                <a href="/Dashboard/admin/admin.html" class="block text-lg font-semibold text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400 transition-colors">Dashboard</a>
+                <a href="/Dashboard/admin/upload.html" class="block text-lg font-semibold text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400 transition-colors">Upload Content</a>
+                <a href="/Dashboard/admin/manage.html" class="block text-lg font-semibold text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400 transition-colors">Manage Users</a>
+                <button onclick="logout()" class="block text-lg font-semibold text-red-500 hover:text-red-700 mt-10 dark:text-red-400 dark:hover:text-red-500 transition-colors">Logout</button>
+                <script>
+                    function logout() {
+                        alert("You have been logged out.");
+                        window.location.href = "/login/login.html";
+                    }
+                </script>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <h1 class="text-2xl font-bold text-gray-700 dark:text-white mb-6">Manage Users</h1>
+
+            <!-- Users Table -->
+            <div class="bg-white p-6 rounded-lg shadow dark:bg-gray-800">
+                <table class="w-full border-collapse border border-gray-300 dark:border-gray-700">
+                    <thead>
+                        <tr class="bg-gray-200 dark:bg-gray-700">
+                            <th class="border border-gray-300 dark:border-gray-700 px-4 py-2 text-left">User ID</th>
+                            <th class="border border-gray-300 dark:border-gray-700 px-4 py-2 text-left">Name</th>
+                            <th class="border border-gray-300 dark:border-gray-700 px-4 py-2 text-left">Email</th>
+                            <th class="border border-gray-300 dark:border-gray-700 px-4 py-2 text-left">Role</th>
+                            <th class="border border-gray-300 dark:border-gray-700 px-4 py-2 text-left">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-table-body">
+                        <!-- Dynamic rows will be added here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Add User Section -->
+            <div class="bg-white p-6 rounded-lg shadow dark:bg-gray-800 mt-8">
+                <h2 class="text-xl font-bold text-gray-700 dark:text-white mb-4">Add New User</h2>
+                <form id="add-user-form" class="space-y-4">
+                    <div>
+                        <label for="user-name" class="block text-gray-700 dark:text-gray-300">Name</label>
+                        <input type="text" id="user-name" name="name" class="w-full border rounded-lg py-2 px-4 dark:bg-gray-700 dark:text-white focus:outline-none" required>
+                    </div>
+                    <div>
+                        <label for="user-email" class="block text-gray-700 dark:text-gray-300">Email</label>
+                        <input type="email" id="user-email" name="email" class="w-full border rounded-lg py-2 px-4 dark:bg-gray-700 dark:text-white focus:outline-none" required>
+                    </div>
+                    <div>
+                        <label for="user-role" class="block text-gray-700 dark:text-gray-300">Role</label>
+                        <select id="user-role" name="role" class="w-full border rounded-lg py-2 px-4 dark:bg-gray-700 dark:text-white focus:outline-none" required>
+                            <option value="Admin">Admin</option>
+                            <option value="User">User</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 dark:bg-blue-400 dark:hover:bg-blue-500 transition-all">Add User</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const userTableBody = document.getElementById('user-table-body');
+        const addUserForm = document.getElementById('add-user-form');
+
+        // Example user data
+        const users = [
+            { id: 1, name: 'John Doe', email: 'john@example.com', role: 'Admin' },
+            { id: 2, name: 'Jane Smith', email: 'jane@example.com', role: 'User' },
+        ];
+
+        // Function to render users in the table
+        function renderUsers() {
+            userTableBody.innerHTML = '';
+            users.forEach(user => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">${user.id}</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">${user.name}</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">${user.email}</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">${user.role}</td>
+                    <td class="border border-gray-300 dark:border-gray-700 px-4 py-2">
+                        <button onclick="editUser(${user.id})" class="text-blue-500 hover:underline">Edit</button>
+                        <button onclick="deleteUser(${user.id})" class="text-red-500 hover:underline ml-2">Delete</button>
+                    </td>
+                `;
+                userTableBody.appendChild(row);
+            });
+        }
+
+        // Function to add a new user
+        addUserForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(addUserForm);
+            const newUser = {
+                id: users.length + 1,
+                name: formData.get('name'),
+                email: formData.get('email'),
+                role: formData.get('role'),
+            };
+            users.push(newUser);
+            renderUsers();
+            addUserForm.reset();
+            alert('User added successfully!');
+        });
+
+        // Function to delete a user
+        function deleteUser(id) {
+            const index = users.findIndex(user => user.id === id);
+            if (index !== -1) {
+                users.splice(index, 1);
+                renderUsers();
+                alert('User deleted successfully!');
+            }
+        }
+
+        // Function to edit a user (placeholder for now)
+        function editUser(id) {
+            alert(`Edit functionality for user ID ${id} is not implemented yet.`);
+        }
+
+        // Initial render
+        renderUsers();
+    </script>
+
+</body>

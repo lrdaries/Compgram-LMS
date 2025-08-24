@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Compgram Nigeria</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io (1)/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io (1)/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io (1)/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  </head>
+  <body>
+
+    <div class="container" id="container">
+      <div class="form-container sign-up">
+        <form>
+        <h1>Create Account</h1>
+          <div class="social-icons">
+            <a href="https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=email%20profile" class="icon">
+              <i class="fa-brands fa-google"></i>
+            </a>
+            <a href="https://www.facebook.com/v12.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=email,public_profile" class="icon">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a></a>
+            <a href="https://github.com/login/oauth/authorize?client_id=YOUR_CLIENT_ID" class="icon"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <!--<a href="" class="icon"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>-->
+          </div>
+          <span>or use your email for registeration</span>
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <button>Sign Up</button>
+        </form>
+      </div>
+      <div class="form-container sign-in">
+        <form>
+          <h1>Sign In</h1>
+          <div class="social-icons">
+            <a href="https://accounts.google.com/o/oauth2/auth?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=email%20profile" class="icon">
+              <i class="fa-brands fa-google"></i>
+            </a>
+            <a href="https://www.facebook.com/v12.0/dialog/oauth?client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=email,public_profile" class="icon">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://github.com/login/oauth/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI" class="icon">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            
+            <!--<a href="#" class="icon"
+              >
+              <i class="fa-brands fa-linkedin-in"></i
+            ></a>-->
+          </div>
+          <span>or use your email password</span>
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <a href="#">Forget Your Password?</a>
+          <button>Sign In</button>
+        </form>
+      </div>
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-left">
+            <h1>Compgram Dashboard</h1>
+            <h2>Welcome Back!</h2>
+            <p>Enter your personal details</p>
+            <button class="hidden" id="login">Sign In</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+            <h1>Hello, Friend!</h1>
+            <p>
+              Register with your personal details 
+            </p>
+            <button class="hidden" id="register">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

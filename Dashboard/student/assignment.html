@@ -1,0 +1,196 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compgram Student Dashboard</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io (1)/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io (1)/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io (1)/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="bg-gray-100 min-h-screen font-sans dark:bg-gray-900 dark:text-white">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center bg-white shadow p-4 dark:bg-gray-800">
+    <div class="flex items-center">
+      <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">Compgram Nigeria</div>
+    </div>
+
+    <div class="flex items-center space-x-4">
+      <div class="relative">
+        <input type="text" placeholder="Search" class="border rounded-lg pl-4 pr-10 py-2 focus:outline-none dark:bg-gray-700 dark:text-white">
+        <div class="absolute top-2 right-3">
+          <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png" class="w-5 h-5" alt="search-icon">
+        </div>
+      </div>
+
+      <div class="relative flex items-center space-x-2">
+        <div class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></div>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png" class="w-6 h-6" alt="">
+        <a href="/Dashboard/student/profile.html" class="text-gray-700 hover:underline text-sm dark:text-gray-300">
+          <h4 id="welcome-message">Welcome</h4>
+        </a>
+        <div>
+          <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png" class="w-8 h-8 rounded-full" alt="dp">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar + Main -->
+  <div class="flex">
+
+    <!-- Sidebar -->
+    <nav id="sidebar" class="w-64 bg-white shadow-lg min-h-screen p-6 dark:bg-gray-800 md:block">
+      <div class="space-y-6">
+        <a href="/Dashboard/student/dashboard.html" class="block text-lg font-semibold text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400 transition-colors">Dashboard</a>
+        <a href="/Dashboard/student/assignment.html" class="block text-lg font-semibold text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400 transition-colors">Assignments</a>
+        <a href="/Dashboard/student/exam.html" class="block text-lg font-semibold text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400 transition-colors">Exam</a>
+        <a href="/Dashboard/student/profile.html" class="block text-lg font-semibold text-gray-700 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400 transition-colors">Profile</a>
+        <button onclick="logout()" class="block text-lg font-semibold text-red-500 hover:text-red-700 mt-10 dark:text-red-400 dark:hover:text-red-500 transition-colors">Logout</button>
+        <script>
+          function logout() {
+            alert("You have been logged out.");
+            window.location.href = "/login/login.html";
+          }
+        </script>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6">
+
+      <!-- Sliding Text -->
+      <div class="bg-gray-200 text-gray-700 p-4 rounded mb-6 text-center text-lg dark:bg-gray-700 dark:text-white">
+        <marquee behavior="scroll" direction="left">
+          Welcome to your Dashboard! For enquiries please send a mail to compgramng@gmail.com
+        </marquee>
+      </div>
+
+      <!-- Search 
+      <div class="relative mb-6">
+        <input type="text" placeholder="Search" class="w-full border rounded-lg py-2 pl-4 pr-10 dark:bg-gray-700 dark:text-white focus:outline-none">
+        <div class="absolute right-3 top-2">
+          <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png" class="w-5 h-5" alt="search-button">
+        </div>
+      </div>-->
+
+      <!-- Boxes -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="bg-white p-6 rounded-lg shadow dark:bg-gray-800 transition-transform transform hover:scale-105">
+          <h2 class="text-2xl font-bold">--</h2>
+          <p class="text-gray-600 mt-2 dark:text-gray-300">Completed Assignments</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow dark:bg-gray-800 transition-transform transform hover:scale-105">
+          <h2 class="text-2xl font-bold">--</h2>
+          <p class="text-gray-600 mt-2 dark:text-gray-300">Assignments Taken</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow dark:bg-gray-800 transition-transform transform hover:scale-105">
+          <h2 class="text-2xl font-bold">0%</h2>
+          <p class="text-gray-600 mt-2 dark:text-gray-300">Total Percentage Completed</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow dark:bg-gray-800 transition-transform transform hover:scale-105">
+          <h2 class="text-2xl font-bold">--</h2>
+          <p class="text-gray-600 mt-2 dark:text-gray-300">Overall Grade</p>
+        </div>
+      </div>
+
+      <!-- Dashboard Overview -->
+      <div class="bg-white p-6 rounded-lg shadow dark:bg-gray-800">
+        <div class="flex justify-between items-center mb-4">
+          <h1 class="text-xl font-bold text-gray-700 dark:text-white">Assignments</h1>
+          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 dark:bg-blue-400 dark:hover:bg-blue-500 transition-all">View All</button>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white border dark:bg-gray-800">
+            <thead>
+              <tr class="bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-white">
+                <th class="py-2 px-4 border">Week</th>
+                <th class="py-2 px-4 border">Topic</th>
+                <th class="py-2 px-4 border">Sub-Topic</th>
+                <th class="py-2 px-4 border">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Example Row 
+              <tr>
+                <td class="py-2 px-4 border">Week 1</td>
+                <td class="py-2 px-4 border">Introductory Discussions</td>
+                <td class="py-2 px-4 border">General discussions</td>
+                <td class="py-2 px-4 border">
+                  <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition-all">View More</button>
+                </td>
+              </tr>
+              <!-- Copy the above <tr> for each week -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Dark Mode Toggle Button 
+  <button onclick="toggleDarkMode()" id="dark-mode-toggle" class="fixed bottom-5 right-5 bg-gray-800 text-white p-3 rounded-full shadow-lg dark:bg-gray-700">
+      🌙
+  </button>
+
+  <script>
+      function toggleDarkMode() {
+          const body = document.body;
+          const darkModeToggle = document.getElementById('dark-mode-toggle');
+          
+          // Toggle the 'dark' class on the body element
+          body.classList.toggle("dark");
+
+          // Change the icon on the button based on the theme
+          if (body.classList.contains("dark")) {
+              darkModeToggle.innerHTML = "☀️"; // Sun icon for light mode
+          } else {
+              darkModeToggle.innerHTML = "🌙"; // Moon icon for dark mode
+          }
+      }
+
+      // Optionally, set dark mode based on user's system preference
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.body.classList.add("dark");
+          document.getElementById('dark-mode-toggle').innerHTML = "☀️";
+      }
+  </script>-->
+
+  <!-- Dark Mode Toggle Button 
+  <button onclick="toggleDarkMode()" id="dark-mode-toggle" class="fixed bottom-5 right-5 bg-gray-800 text-white p-3 rounded-full shadow-lg dark:bg-gray-700">
+    🌙
+  </button>
+
+  <script>
+    function toggleDarkMode() {
+      const body = document.body;
+      const darkModeToggle = document.getElementById('dark-mode-toggle');
+      
+      // Toggle the 'dark' class on the body element
+      body.classList.toggle("dark");
+
+      // Change the icon on the button based on the theme
+      if (body.classList.contains("dark")) {
+        darkModeToggle.innerHTML = "☀️"; // Sun icon for light mode
+      } else {
+        darkModeToggle.innerHTML = "🌙"; // Moon icon for dark mode
+      }
+    }
+
+    // Optionally, set dark mode based on user's system preference
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.classList.add("dark");
+    }
+  </script>-->
+
+</body>
